@@ -1,0 +1,164 @@
+// Styling for the navbar
+#mainNav {
+  background-color: $gray-900;
+  .navbar-toggler {
+    font-size: 12px;
+    font-weight: 600;
+    right: 0;
+    padding: 13px;
+    text-transform: uppercase;
+    color: white;
+    border: 0;
+    background-color: #f2ada2;
+    @include heading-font;
+  }
+  .navbar-brand {
+    color: #f2ada2;
+    &.active,
+    &:active,
+    &:focus,
+    &:hover {
+      color: darken($primary, 10%);
+    }
+  }
+  .navbar-nav {
+    .nav-item {
+      &:first-child {
+        @media(max-width: 1365px) {
+          margin-top: 15px;
+        }
+      }
+      div.dropdown {
+        &:hover {
+          color: white;
+          > ul,
+          > .dropdown-menu {
+              @media (min-width: 1366px) {
+                display: block;
+              }
+            }
+          > .btn-default {
+            text-decoration: none;
+          }
+        }
+      }
+      button {
+        width: 100%;
+        text-align: left;
+      }
+      .btn {
+        box-shadow: none !important;
+      }
+      .btn-default {
+        // -webkit-tap-highlight-color:  rgba(0, 0, 0, 0); 
+        &:after {
+          @media (max-width: 1365px) {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border: none;
+            border-right: 1px solid #fed136;
+            border-bottom: 1px solid #fed136;
+            display: inline-block;
+            -webkit-transform: rotate(45deg) translateY(-50%);
+            transform: rotate(45deg) translateY(-50%);
+            float: right;
+            margin-bottom: 1px;
+          }
+        }
+      }
+      button {
+        @media (max-width: 1023px) {
+          padding: 10.8px 0;
+        }
+        &:focus { 
+          outline: none !important;
+          box-shadow: none !important;
+          border: none !important;
+        }
+      }
+      .nav-link {
+        font-size: 90%;
+        font-weight: 400;
+        padding: 0.75em 0;
+        letter-spacing: 1px;
+        color: white;
+        @include heading-font;
+        &.active,
+        &:hover {
+          color: #f2ada2;
+          @media (max-width: 991px) {
+            color: #fed136;
+          }
+        }
+      }
+      .dropdown-menu {
+        background-color: $my_nav;
+        border: none;
+        margin-top: 0.2px;
+        border-radius: 0;
+        @media (max-width: 991px) {
+          padding: 0;
+          margin: 0;
+          margin-left: 15px;
+          margin-bottom: 20px;
+        }
+        li {
+          width: 220px;
+          padding: 10px;
+          @media (max-width: 991px) {
+            width: 100%;
+            padding: 10px 0;
+            border-bottom: 1px solid #f2ada2;
+          }
+          a {
+            font-weight: 400;
+            font-size: 95%;
+            text-decoration: none;
+            color: white;
+            &:hover {
+              color: #f2ada2;
+            }
+            @media (max-width: 991px) {
+              
+              padding: 15px 0;
+              
+            }
+          }
+        }  
+      }
+    }
+  }
+}
+@media(min-width:1366px) {
+  #mainNav {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+    -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+    border: none;
+    background-color: transparent;
+    .navbar-brand {
+      font-size: 3em;
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          padding: 1.1em 1em !important;
+        }
+      }
+    }
+    &.navbar-shrink {
+      padding: 5px 0;
+      background-color: $my_nav;
+      .navbar-brand {
+        font-size: 2em;
+        padding: 12px 0;
+      }
+    }
+  }
+}
